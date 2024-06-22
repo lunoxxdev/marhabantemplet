@@ -18,7 +18,7 @@
         }
         alert("☘️ Bersama Edy Membangun Negeri ☘️");
         alert("• Khusus Server ini •\n» Bagi user HP, disarankan menggunakan Apk yang sudah disediakan di bagian Download Apk\n» Karena sudah menggunakan Xray Core versi terbaru")
-        alert("Untuk user HTTP Upgrade bisa menggunakan APK V2rayNG yang sudah disediakan\n\nRegards : Edy ❤️ Jeki Polepel");</script>
+        alert("Untuk user HTTP Upgrade, bisa gunakan Apk yang sudah disediakan\n\nRegards : Edy ❤️ Jeki Polepel");</script>
         <script>
             const dataLimit = "{% if not user.data_limit %}∞{% else %}{{ user.data_limit }}{% endif %}";
             const dataUsed = "{{ user.used_traffic }}";
@@ -31,52 +31,65 @@
             let expireDateVar = expireDateInit.includes("∞") ? "∞" : localStorage.getItem("lang") == "fa" ? new Date(expireDateInit).toLocaleString("fa-IR-u-nu-latn").replace(",", " ") : expireDateInit;
             let appsJson = {
                 Android: {
-                    GatchaNG: {
-                        url: [
-                            {
-                                name: "Arm64",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/GatchaNG_v1.8.3-19.514._UWU_UI_V16_arm64-v8a.apk",
-                                best: true,
-                            },
-                            {
-                                name: "Armeabi",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/GatchaNG_v1.8.3-19.514._UWU_UI_V16_armeabi-v7a.apk",
-                                best: false,
-                            },
-                        ],
-                        tutorial: "",
-                    V2rayNG: {
-                        url: [
-                            {
-                                name: "Arm64",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2rayNG_v1.8.25.2000562._UWU_UI_V2_arm64-v8a.apk",
-                                best: true,
-                            },
-                            {
-                                name: "Armeabi",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2rayNG_v1.8.25.2000562._UWU_UI_V2_armeabi-v7a.apk",
-                                best: false,
-                            },
-                        ],
-                        tutorial: "",
-                    },
-                    V2flyNG: {
-                        url: [
-                            {
-                                name: "Arm64",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2flyNG_v1.8.14.2000542._UWU_UI_arm64-v8a.apk",
-                                best: false,
-                            },
-                            {
-                                name: "Armeabi",
-                                url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2flyNG_v1.8.14.2000542._UWU_UI_armeabi-v7a.apk",
-                                best: false,
-                            },
-                        ],
-                        tutorial: "",
-                    },
+                GatchaNG: {
+                    url: [
+                        {
+                            name: "Arm64",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/GatchaNG_v1.8.3-19.514._UWU_UI_V16_arm64-v8a.apk",
+                            best: false,
+                        },
+                        {
+                            name: "Armeabi",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/GatchaNG_v1.8.3-19.514._UWU_UI_V16_armeabi-v7a.apk",
+                            best: false,
+                        },
+                    ],
+                    tutorial: "",
                 },
-            };
+                V2flyNG: {
+                    url: [
+                        {
+                            name: "Arm64",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2flyNG_v1.8.14.2000542._UWU_UI_arm64-v8a.apk",
+                            best: false,
+                        },
+                        {
+                            name: "Armeabi",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2flyNG_v1.8.14.2000542._UWU_UI_armeabi-v7a.apk",
+                            best: false,
+                        },
+                    ],
+                    tutorial: "",
+                },
+            },
+            HTTPUpgrade: {
+                V2rayNG: {
+                    url: [
+                        {
+                            name: "Arm64",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2rayNG_v1.8.25.2000562._UWU_UI_V2_arm64-v8a.apk",
+                            best: false,
+                        },
+                        {
+                            name: "Armeabi",
+                            url: "https://github.com/lunoxxdev/nganuEdyirenkCintaJekiPolepel/releases/download/edy/v2rayNG_v1.8.25.2000562._UWU_UI_V2_armeabi-v7a.apk",
+                            best: false,
+                        },
+                    ],
+                    tutorial: "",
+                },
+                Husi: {
+                    url: [
+                        {
+                            name: "Arm64 / Armeabi",
+                            url: "https://apt.izzysoft.de/fdroid/repo/fr.husi_215.apk",
+                            best: false,
+                        }
+                    ],
+                    tutorial: "",
+                },
+            },
+        };
             let langJson = {
                 en: {
                     active: "Active",
